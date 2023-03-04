@@ -10,9 +10,10 @@ if [ ! -d "./logs" ]; then
 fi
 
 for ext in aux bcf log run.xml bbl blg tex.bbl tex.blg; do 
- mv $filename.$ext ./logs/
+ mv *.$ext ./logs/
 done
 
 Date=`date`
-git add $filename.tex  home/$filename.pdf
+git add $filename.tex  home/$filename.pdf 
+git add *.tex
 git commit -m "compiling $filenaem-$Date"
